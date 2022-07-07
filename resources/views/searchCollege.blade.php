@@ -59,7 +59,7 @@
                                 </table>
                             </div>
 
-                            <form class="mt-5" action="{{ route('searchCollege.post') }}" method="post">
+                            <form action="{{ route('searchCollege.post') }}" method="post">
                                 @csrf
                                 <select class="form-select mb-1" name="college" aria-label="select">
                                     <option selected>Collège</option>
@@ -82,7 +82,6 @@
                                       </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($colleges as $college)
                                         <tr>
                                             <th scope="row">{{ $college->id }}</th>
                                             <td>{{ $college->name }}</td>
@@ -90,7 +89,6 @@
                                             <td>{{ $college->ville }}</td>
                                             <td><a href="{{ route('college.get', ['id' => $college->id]) }}" class="btn btn-primary">Contact</a></td>
                                           </tr>
-                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
